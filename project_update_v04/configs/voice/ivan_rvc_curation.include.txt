@@ -1,0 +1,17 @@
+# Ivan Grozny / Yuri Yakovlev only. One RVC slice filename per line.
+# Reviewed against source-video time ranges, Whisper transcript and ECAPA similarity.
+0_3.wav
+0_5.wav
+0_6.wav
+0_7.wav
+0_8.wav
+0_10.wav
+0_11.wav
+0_12.wav
+0_14.wav
+0_15.wav
+0_16.wav
+0_17.wav
+0_20.wav
+0_21.wav
+0_24.wav

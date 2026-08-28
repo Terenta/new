@@ -1,0 +1,50 @@
+schema_version: 1
+voice_job_id: ivan_grozny_rvc_pilot_001
+backend: rvc
+gpu_profile: rtx_pro_6000_96gb
+character_id: ivan_grozny_1973
+rights_manifest: configs/rights_manifest.local.yaml
+model_registry: configs/model_registry.yaml
+runtime_model_lock: configs/model_registry.runtime.lock.yaml
+
+dataset:
+  source_asset_id: character_voice_source
+  observed_content_end_seconds: 85.8
+  curation_manifest: configs/voice/ivan_rvc_curation.yaml
+  curated_experiment: ivan_grozny_pilot_curated
+  curated_slices: 15
+  curated_duration_seconds: 55.5
+  current_usable_duration_status: curated_pilot_only_below_official_10_minute_recommendation
+  production_target_clean_speech_minutes: 10
+  contamination_review_required: true
+  reject_other_speakers_music_and_effects: true
+
+training:
+  version: v2
+  sample_rate: 48k
+  use_f0: true
+  f0_method: rmvpe
+  epochs: 200
+  save_every_epochs: 25
+  batch_size: 8
+  seed: 1001
+  evaluation_checkpoints: [100, 150, 200]
+
+conversion:
+  source_audio: data/raw/performance_audio/intonation_take_001_trimmed.wav
+  model: data/voice/ivan_grozny_1973/approved/ivan_grozny_v2_48k.pth
+  index: data/voice/ivan_grozny_1973/approved/ivan_grozny_v2_48k.index
+  output: data/voice/ivan_grozny_1973/converted_exact_timing.wav
+  pitch_semitones: 0
+  f0_method: rmvpe
+  index_rate: 0.65
+  resample_sr: 48000
+  rms_mix_rate: 0.85
+  protect: 0.33
+  preserve_exact_timing: true
+  overwrite: false
+
+approval:
+  dataset: true
+  checkpoint_abx: false
+  converted_line: false

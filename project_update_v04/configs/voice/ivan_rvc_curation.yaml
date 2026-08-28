@@ -1,0 +1,37 @@
+schema_version: 1
+curation_id: ivan_grozny_rvc_pilot_visual_asr_ecapa_v1
+source_experiment: ivan_grozny_pilot
+target_experiment: ivan_grozny_pilot_curated
+source_observed_content_end_seconds: 85.8
+include_file: configs/voice/ivan_rvc_curation.include.txt
+review:
+  reviewed_at: 2026-08-28
+  reviewed_by: codex_visual_asr_ecapa_review
+  methods:
+    - exact_source_time_mapping
+    - source_video_visual_review
+    - whisper_turbo_transcript_review
+    - speechbrain_ecapa_similarity_cross_check
+  target_character: ivan_grozny_1973
+  included_slices: 15
+  included_duration_seconds: 55.5
+  status: approved_for_pilot_training
+excluded:
+  - file: 0_0.wav
+    time_seconds: [0.0, 3.7]
+    reason: other_character_shurik
+  - file: 0_1.wav
+    time_seconds: [3.4, 7.1]
+    reason: other_character_shurik
+  - file: 0_2.wav
+    time_seconds: [6.8, 10.5]
+    reason: scribe_dialogue_contamination
+  - file: 0_23.wav
+    time_seconds: [68.46, 72.16]
+    reason: police_officer_dialogue
+  - file: 0_27.wav
+    time_seconds: [81.225, 84.925]
+    reason: multi_speaker_scene
+  - file: 0_29.wav
+    time_seconds: [84.625, 85.8]
+    reason: too_short_and_low_similarity
