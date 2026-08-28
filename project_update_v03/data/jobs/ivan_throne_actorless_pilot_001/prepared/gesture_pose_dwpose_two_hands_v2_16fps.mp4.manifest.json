@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "motion_id": "ivan_scepter_two_hands_actorless_v2",
+  "config": "C:\\Users\\dtere\\OneDrive\\Рабочий стол\\AI-OKK\\character-video-factory-ivan-pilot\\configs\\motion\\ivan_scepter_two_hands_actorless_v2.yaml",
+  "output": "C:\\Users\\dtere\\OneDrive\\Рабочий стол\\AI-OKK\\character-video-factory-ivan-pilot\\data\\jobs\\ivan_throne_actorless_pilot_001\\prepared\\gesture_pose_dwpose_two_hands_v2_16fps.mp4",
+  "width": 720,
+  "height": 1280,
+  "fps": 16,
+  "frames": 219,
+  "duration_seconds_nominal": 13.66,
+  "sha256": "462D6DBF423829B9D17EA7FD02EE9DEB7950AE6FB73D324F03E8B66F5E769D73",
+  "source": "deterministic_manual_dwpose_style_control"
+}

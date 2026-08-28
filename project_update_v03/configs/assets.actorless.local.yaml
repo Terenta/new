@@ -1,0 +1,37 @@
+schema_version: 1
+assets:
+  character_voice_source:
+    path: "D:/Загрузки ПДФ/Иван грозный реплики.mp4"
+    sha256: D29DB3A4E625E5742FA70F4B1DF0FEDBEDC35849ECDC0B1957AE9B1C054C3EDE
+    transfer: true
+    required_for: [voice_dataset]
+  intonation_take_trimmed:
+    path: data/raw/performance_audio/intonation_take_001_trimmed.wav
+    sha256: AA5D89F6F4871D197B913F73C5803350FFEE68A1AAAEAA46565924487AC3B880
+    transfer: true
+    required_for: [voice_conversion]
+  source_frame_exact:
+    path: _work/source/film_1080_t00-22-59.042.png
+    sha256: 5F79291A08010A0FE410AFA625E45CE9C7D36BC6F75925A6FCC0BB9E31AF0AD2
+    transfer: true
+    required_for: [provenance_only]
+  master_plate:
+    path: artifacts/plates/candidates/plate_throne_clean_vertical_v04_camera_facing.png
+    sha256: 60D7205D1641508C211692E55BA5DD0B2EC1C169877BB5D3FCD9C6E73ADFF5D8
+    transfer: true
+    required_for: [render]
+  gesture_storyboard_15:
+    path: artifacts/storyboards/actorless_gesture_v03_two_hands_camera_facing/contact_sheet_15.png
+    sha256: A2382F869A004266D3DFCE91F81E273659AE1A8BF67CBD9C5A93F55EBCF994E3
+    transfer: true
+    required_for: [review]
+  gesture_motion_guide:
+    path: artifacts/storyboards/actorless_gesture_v03_two_hands_camera_facing/motion_guide_rgb_16fps_13s.mp4
+    sha256: 1C6E661C1DA499FC982A072851D4DE8AAB4BFCEFF9EDE62A9D389500D263C610
+    transfer: true
+    required_for: [actorless_prepare]
+  gesture_pose_control:
+    path: data/jobs/ivan_throne_actorless_pilot_001/prepared/gesture_pose_dwpose_two_hands_v2_16fps.mp4
+    sha256: 462D6DBF423829B9D17EA7FD02EE9DEB7950AE6FB73D324F03E8B66F5E769D73
+    transfer: true
+    required_for: [render]

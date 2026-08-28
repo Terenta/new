@@ -1,0 +1,23 @@
+schema_version: 1
+rights_manifest_id: rights_ivan_grozny_pilot_001
+project_id: ivan_grozny_greeting_pilot
+asset_scope:
+  film_ids: [ivan_vasilievich_1973]
+  character_ids: [ivan_grozny_1973]
+  actor_likeness: true
+  voice: true
+  costume: true
+  locations: true
+  dialogue_adaptation: true
+  derivative_generation: true
+  commercial_use: true
+  event_display: true
+  social_media: true
+territory: worldwide
+valid_from: 2026-08-28
+valid_until: null
+approved_by: user_confirmed_in_codex_task
+document_reference: codex_task_user_assertion_2026-08-28
+restrictions: []
+user_assertion_received: true
+status: approved

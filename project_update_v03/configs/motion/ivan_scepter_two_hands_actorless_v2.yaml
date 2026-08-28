@@ -1,0 +1,49 @@
+schema_version: 1
+motion_id: ivan_scepter_two_hands_actorless_v2
+coordinate_space: normalized_image_xy
+width: 720
+height: 1280
+fps: 16
+duration_seconds: 13.66
+convention: wan22_dwpose_style_body20
+joint_order:
+  [nose, neck, r_shoulder, r_elbow, r_wrist, l_shoulder, l_elbow, l_wrist,
+   r_hip, r_knee, r_ankle, l_hip, l_knee, l_ankle, r_eye, l_eye, r_ear,
+   l_ear, l_toe, r_toe]
+base_pose:
+  nose: [0.490, 0.340, 1.0]
+  neck: [0.495, 0.420, 1.0]
+  r_shoulder: [0.390, 0.455, 1.0]
+  r_elbow: [0.260, 0.500, 1.0]
+  r_wrist: [0.140, 0.450, 1.0]
+  l_shoulder: [0.610, 0.460, 1.0]
+  l_elbow: [0.600, 0.570, 1.0]
+  l_wrist: [0.470, 0.630, 1.0]
+  r_hip: [0.430, 0.660, 1.0]
+  r_knee: [0.340, 0.780, 1.0]
+  r_ankle: [0.300, 0.860, 1.0]
+  l_hip: [0.580, 0.660, 1.0]
+  l_knee: [0.570, 0.780, 1.0]
+  l_ankle: [0.540, 0.870, 1.0]
+  r_eye: [0.470, 0.335, 1.0]
+  l_eye: [0.510, 0.335, 1.0]
+  r_ear: [0.450, 0.345, 1.0]
+  l_ear: [0.530, 0.345, 1.0]
+  l_toe: [0.550, 0.895, 1.0]
+  r_toe: [0.285, 0.890, 1.0]
+keyframes:
+  - {time: 0.000, phase: neutral, r_elbow: [0.260, 0.500], r_wrist: [0.140, 0.450], l_elbow: [0.600, 0.570], l_wrist: [0.470, 0.630]}
+  - {time: 0.976, phase: inhale, r_elbow: [0.255, 0.492], r_wrist: [0.148, 0.444], l_elbow: [0.604, 0.562], l_wrist: [0.490, 0.610]}
+  - {time: 1.951, phase: open_hand, r_elbow: [0.252, 0.480], r_wrist: [0.158, 0.430], l_elbow: [0.610, 0.545], l_wrist: [0.535, 0.565]}
+  - {time: 2.927, phase: dual_lift_start, r_elbow: [0.260, 0.452], r_wrist: [0.170, 0.392], l_elbow: [0.625, 0.515], l_wrist: [0.620, 0.500]}
+  - {time: 3.903, phase: dual_forearm_rise, r_elbow: [0.270, 0.420], r_wrist: [0.185, 0.350], l_elbow: [0.650, 0.490], l_wrist: [0.700, 0.455]}
+  - {time: 4.879, phase: dual_outward, r_elbow: [0.282, 0.382], r_wrist: [0.202, 0.310], l_elbow: [0.675, 0.465], l_wrist: [0.760, 0.420]}
+  - {time: 5.854, phase: dual_strong_sweep, r_elbow: [0.292, 0.350], r_wrist: [0.222, 0.268], l_elbow: [0.690, 0.440], l_wrist: [0.790, 0.375]}
+  - {time: 6.830, phase: dual_apex, r_elbow: [0.300, 0.322], r_wrist: [0.242, 0.230], l_elbow: [0.690, 0.420], l_wrist: [0.785, 0.340]}
+  - {time: 7.806, phase: dual_apex_hold, r_elbow: [0.300, 0.322], r_wrist: [0.242, 0.230], l_elbow: [0.690, 0.420], l_wrist: [0.785, 0.340]}
+  - {time: 8.781, phase: dual_downbeat, r_elbow: [0.282, 0.390], r_wrist: [0.182, 0.332], l_elbow: [0.675, 0.470], l_wrist: [0.745, 0.470]}
+  - {time: 9.757, phase: dual_follow_through, r_elbow: [0.270, 0.430], r_wrist: [0.162, 0.382], l_elbow: [0.655, 0.505], l_wrist: [0.690, 0.520]}
+  - {time: 10.733, phase: dual_return_inward, r_elbow: [0.262, 0.462], r_wrist: [0.150, 0.414], l_elbow: [0.630, 0.535], l_wrist: [0.600, 0.565]}
+  - {time: 11.709, phase: settle, r_elbow: [0.260, 0.482], r_wrist: [0.142, 0.440], l_elbow: [0.610, 0.555], l_wrist: [0.515, 0.610]}
+  - {time: 12.684, phase: dual_final_beat, r_elbow: [0.270, 0.432], r_wrist: [0.172, 0.382], l_elbow: [0.650, 0.500], l_wrist: [0.710, 0.470]}
+  - {time: 13.660, phase: return, r_elbow: [0.260, 0.500], r_wrist: [0.140, 0.450], l_elbow: [0.600, 0.570], l_wrist: [0.470, 0.630]}

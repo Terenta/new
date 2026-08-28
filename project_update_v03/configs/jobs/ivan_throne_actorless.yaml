@@ -1,0 +1,74 @@
+schema_version: 1
+job_id: ivan_throne_actorless_pilot_001
+branch: fully_generative
+backend: wan22_s2v
+gpu_profile: rtx_pro_6000_96gb
+character_id: ivan_grozny_1973
+script_id: script_ivan_alexey_alliance_001
+shot_template_id: ivan_throne_greeting_v1
+rights_manifest: configs/rights_manifest.local.yaml
+model_registry: configs/model_registry.yaml
+runtime_model_lock: configs/model_registry.runtime.lock.yaml
+
+required_approvals: [scene_plate, gesture_storyboard, converted_voice]
+approval:
+  scene_plate: true
+  gesture_storyboard: false
+  converted_voice: false
+
+inputs:
+  reference_image: artifacts/plates/candidates/plate_throne_clean_vertical_v04_camera_facing.png
+  speech_audio: data/voice/ivan_grozny_1973/converted_exact_timing.wav
+  storyboard: artifacts/storyboards/actorless_gesture_v03_two_hands_camera_facing/contact_sheet_15.png
+  motion_guide_rgb: artifacts/storyboards/actorless_gesture_v03_two_hands_camera_facing/motion_guide_rgb_16fps_13s.mp4
+  pose_video: data/jobs/ivan_throne_actorless_pilot_001/prepared/gesture_pose_dwpose_two_hands_v2_16fps.mp4
+
+generation:
+  mode: speech_to_video_pose_audio
+  size: "720*1280"
+  native_fps: 16
+  delivery_fps: 25
+  duration_source: speech_audio
+  infer_frames: 80
+  sample_steps: 40
+  sample_shift: 3.0
+  guidance_scale: 4.5
+  solver: unipc
+  seeds: [2101, 2102, 2103]
+  start_from_reference: true
+  pose_control_required: true
+  prompt: >-
+    One continuous locked-camera live-action shot matching the supplied 1973 Soviet-film
+    reference exactly. Ivan remains seated firmly on the carved throne in the green vaulted
+    royal chamber, wearing the same black fur hat, dark fur mantle, burgundy-and-gold brocade
+    robe and silver boots. His face, head, upper chest and both eyes remain directed squarely
+    at the camera, maintaining unmistakable eye contact with the viewer while he speaks in
+    Russian with stern sovereign intensity. During the speech he performs one controlled,
+    synchronized two-arm sovereign gesture. His right hand keeps a physically correct grip on
+    the same single long ceremonial sceptre through a lift, outward apex, decisive downward
+    beat and return. Simultaneously his left hand opens toward the camera, rises from his lap
+    to shoulder height, holds the apex, joins the downward beat and returns. The open left hand
+    stays anatomically correct and never covers his face; the sceptre remains single, rigid and
+    continuous. Only subtle head, eyes, brows, mouth, shoulders and both arms move. The
+    throne, costume, face, beard, body proportions, background, floor, lighting, lens and film
+    grain remain stable. Reject side-looking or off-camera gaze. No standing, walking, camera
+    motion, cut, zoom, other person, scribe,
+    table, paper, subtitle, logo, watermark, extra limb, extra finger or duplicated sceptre.
+
+post:
+  source_lock_first_frame: true
+  native_lipsync_first: true
+  lipsync_repair_backend: latentsync
+  lipsync_repair_only_failed_ranges: true
+  identity_repair_only_failed_ranges: true
+  upscale_backend: seedvr2
+  target_width: 1080
+  target_height: 1920
+  target_fps: 25
+  final_audio_asset: data/voice/ivan_grozny_1973/converted_exact_timing.wav
+
+output:
+  root: artifacts/pilot/runs/ivan_throne_actorless_pilot_001
+  raw_pattern: raw/wan22_s2v/seed_{seed}.mp4
+  final_master: final/ivan_throne_actorless_master.mov
+  final_delivery: final/ivan_throne_actorless_1080x1920_h264.mp4
