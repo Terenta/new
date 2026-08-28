@@ -34,5 +34,5 @@ RVC_CUDA_GRAPH=0 "$RVC_PY" -m train.train \
 CANDIDATES="$ROOT/data/voice/ivan_grozny_1973/candidates"
 mkdir -p "$CANDIDATES"
 find "$RVC_ROOT/assets/weights" -maxdepth 1 -type f -name "*${EXP}*.pth" -exec cp -p {} "$CANDIDATES/" \;
-find "$RVC_ROOT/assets/indices" -maxdepth 1 -type f -name "*${EXP}*.index" -exec cp -p {} "$CANDIDATES/" \;
+find "$RVC_ROOT/assets/indices" -maxdepth 1 \( -type f -o -type l \) -name "*${EXP}*.index" -exec cp -Lp {} "$CANDIDATES/" \;
 echo "Training complete. ABX checkpoints at epochs 100/150/200; copy only the approved pair into data/voice/ivan_grozny_1973/approved, update configs/voice/ivan_rvc.yaml, then lock backend rvc."
