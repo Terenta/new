@@ -23,8 +23,7 @@ ffmpeg -hide_banner -loglevel error -y -t 85.8 -i "$SOURCE" -vn -map_metadata -1
   -ac 1 -ar 48000 -c:a pcm_s24le "$DATASET/source_001.wav"
 
 cd "$RVC_ROOT"
-PYTHONPATH="$RVC_ROOT" "$RVC_PY" train/preprocess.py \
-  "$DATASET" 48000 8 "$EXP_DIR" False 3.7
+"$RVC_PY" -m train.preprocess "$DATASET" 48000 8 "$EXP_DIR" False 3.7
 "$RVC_PY" - <<'PY'
 from pathlib import Path
 import soundfile as sf

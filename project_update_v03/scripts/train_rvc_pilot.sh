@@ -18,16 +18,16 @@ cvf doctor --profile "${CVF_GPU_PROFILE:-rtx_pro_6000_96gb}"
 [[ -d "$EXP_DIR/0_gt_wavs" ]] || { echo "Run scripts/prepare_voice_dataset.sh first" >&2; exit 5; }
 
 cd "$RVC_ROOT"
-PYTHONPATH="$RVC_ROOT" "$RVC_PY" train/dataset/extract_f0.py cuda 1 0 0 "$EXP_DIR" True
-PYTHONPATH="$RVC_ROOT" "$RVC_PY" train/dataset/extract_hubert_feature.py \
+"$RVC_PY" -m train.dataset.extract_f0 cuda 1 0 0 "$EXP_DIR" True
+"$RVC_PY" -m train.dataset.extract_hubert_feature \
   cuda:0 1 0 0 "$EXP_DIR" v2 True
 "$RVC_PY" "$ROOT/tools/rvc_build_filelist.py" \
   --rvc-root "$RVC_ROOT" --experiment "$EXP" --sample-rate 48k --version v2 --seed 1001
-PYTHONPATH="$RVC_ROOT" RVC_CUDA_GRAPH=0 "$RVC_PY" train/train.py \
+RVC_CUDA_GRAPH=0 "$RVC_PY" -m train.train \
   -e "$EXP" -sr 48k -f0 1 -bs 8 -g 0 -te 200 -se 25 \
   -pg assets/pretrained_v2/f0G48k.pth -pd assets/pretrained_v2/f0D48k.pth \
   -l 1 -c 1 -sw 1 -v v2
-PYTHONPATH="$RVC_ROOT" "$RVC_PY" train/train_index.py \
+"$RVC_PY" -m train.train_index \
   "$EXP" v2 "$RVC_ROOT/assets/indices" 8 single
 
 CANDIDATES="$ROOT/data/voice/ivan_grozny_1973/candidates"
