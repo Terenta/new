@@ -7,7 +7,7 @@ bootstrap fixes discovered during deployment.
 Apply from the repository root on the server:
 
 ```bash
-sha256sum -c project_update_v03/SHA256SUMS
+(cd project_update_v03 && sha256sum -c SHA256SUMS)
 rsync -a project_update_v03/ /workspace/character-video-factory-ivan-pilot/
 ```
 
